@@ -1,0 +1,196 @@
+.faq-section {
+  padding: 100px 0;
+  background: var(--apex-section-bg);
+}
+
+.faq-layout {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  gap: 80px;
+  align-items: start;
+  margin-top: 48px;
+}
+
+.faq-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.faq-item {
+  border-bottom: 1px solid var(--apex-border);
+  overflow: hidden;
+}
+
+.faq-question {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 0;
+  cursor: pointer;
+  gap: 16px;
+  transition: color var(--transition);
+}
+
+.faq-question:hover {
+  color: var(--apex-orange);
+}
+
+.faq-q-text {
+  font-family: var(--font-condensed);
+  font-size: 1.05rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: inherit;
+  flex: 1;
+}
+
+.faq-toggle {
+  width: 28px;
+  height: 28px;
+  background: var(--apex-card);
+  border: 1px solid var(--apex-border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  color: var(--apex-orange);
+  flex-shrink: 0;
+  transition: background var(--transition), transform var(--transition);
+}
+
+.faq-item.open .faq-toggle {
+  background: var(--apex-orange);
+  color: white;
+  transform: rotate(45deg);
+}
+
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease, padding 0.3s ease;
+}
+
+.faq-item.open .faq-answer {
+  max-height: 200px;
+}
+
+.faq-answer p {
+  font-size: 0.9rem;
+  color: var(--apex-grey);
+  line-height: 1.7;
+  padding-bottom: 20px;
+}
+
+/* Newsletter */
+.newsletter-card {
+  background: var(--apex-card);
+  border: 1px solid var(--apex-border);
+  padding: 44px 36px;
+  position: relative;
+  overflow: hidden;
+}
+
+.newsletter-card::after {
+  content: 'APEX';
+  position: absolute;
+  right: -20px;
+  bottom: -30px;
+  font-family: var(--font-display);
+  font-size: 7rem;
+  color: rgba(255,76,0,0.05);
+  letter-spacing: 0.05em;
+  pointer-events: none;
+  user-select: none;
+}
+
+.newsletter-title {
+  font-family: var(--font-condensed);
+  font-size: 1.4rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--apex-white);
+  margin-bottom: 8px;
+}
+
+.newsletter-subtitle {
+  font-size: 0.85rem;
+  color: var(--apex-grey);
+  margin-bottom: 28px;
+  line-height: 1.6;
+}
+
+.newsletter-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.newsletter-input {
+  width: 100%;
+  padding: 13px 16px;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid var(--apex-border);
+  color: var(--apex-white);
+  font-size: 0.9rem;
+  outline: none;
+  transition: border-color var(--transition);
+  border-radius: 0;
+  font-family: var(--font-body);
+}
+
+.newsletter-input:focus {
+  border-color: var(--apex-orange);
+}
+
+.newsletter-input::placeholder {
+  color: var(--apex-grey);
+  opacity: 0.6;
+}
+
+.newsletter-perks {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 20px;
+}
+
+.newsletter-perk {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.82rem;
+  color: var(--apex-grey);
+}
+
+.perk-check {
+  width: 18px;
+  height: 18px;
+  background: rgba(255,76,0,0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.65rem;
+  color: var(--apex-orange);
+  flex-shrink: 0;
+}
+
+.newsletter-success {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px;
+  background: rgba(255,76,0,0.1);
+  border: 1px solid rgba(255,76,0,0.3);
+  font-size: 0.9rem;
+  color: var(--apex-white);
+}
+
+@media (max-width: 960px) {
+  .faq-layout {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+}
